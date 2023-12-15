@@ -18,9 +18,41 @@ class LoginScreen extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.network(
-            'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=2758&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-            width: width,
+          Stack(
+            children: [
+              Image.network(
+                'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=2758&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+                width: width,
+              ),
+              Positioned(
+                bottom: 20,
+                left: 20,
+                child: Text(
+                    'Home Interior',
+                  style: TextStyle(
+                    fontSize: 35,
+                    color: Colors.white
+                  ),
+                ),
+              ),
+              Positioned(
+                  bottom: 20,
+                  right: 20,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.brown,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20)
+                      ),
+                    ),
+                    onPressed: (){},
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0,),
+                      child: Text('Call Us'),
+                    ),
+                  )
+              ),
+            ],
           ),
           Padding(
             padding: const EdgeInsets.all(12.0),
@@ -58,6 +90,57 @@ class LoginScreen extends StatelessWidget {
 
               ],
             ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                  width: width *0.7,
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      labelText: 'Email',
+                      labelStyle: TextStyle(
+                        fontWeight: FontWeight.w500,
+                      ),
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.grey
+                        )
+                      )
+                    ),
+                  )
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                  width: width *0.7,
+                  child: TextFormField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                        labelText: 'Password',
+                        labelStyle: TextStyle(
+                          fontWeight: FontWeight.w500,
+                        ),
+                        border: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Colors.grey
+                            )
+                        )
+                    ),
+                  )
+              ),
+            ],
+          ),
+          Image.asset(
+            'assets/images/perfume.png',
+            width: 100,
+
           ),
         ],
       ),
