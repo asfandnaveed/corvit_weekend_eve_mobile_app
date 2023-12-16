@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 
 
 class LoginScreen extends StatelessWidget {
@@ -23,13 +25,15 @@ class LoginScreen extends StatelessWidget {
               Image.network(
                 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=2758&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
                 width: width,
+                height: 300,
+                fit: BoxFit.cover,
               ),
               Positioned(
                 bottom: 20,
                 left: 20,
                 child: Text(
                     'Home Interior',
-                  style: TextStyle(
+                  style: GoogleFonts.abel(
                     fontSize: 35,
                     color: Colors.white
                   ),
@@ -141,6 +145,10 @@ class LoginScreen extends StatelessWidget {
             'assets/images/perfume.png',
             width: 100,
 
+          ),
+          Lottie.asset(
+            'assets/animation/music.json',
+            height: 200
           ),
         ],
       ),

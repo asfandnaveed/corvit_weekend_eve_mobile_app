@@ -1,11 +1,36 @@
+import 'package:another_flutter_splash_screen/another_flutter_splash_screen.dart';
 import 'package:corvit_weekend_eve/login.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MaterialApp(
-    home: MyApp(),
+    home: SplashScreen(),
   ));
 }
+
+
+class SplashScreen extends StatelessWidget {
+  const SplashScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: FlutterSplashScreen.fadeIn(
+        backgroundColor: Colors.white,
+          animationDuration: Duration(milliseconds: 4000),
+          childWidget: SizedBox(
+            width: 200,
+            height: 200,
+            child: Image.asset('assets/images/perfume.png'),
+          ),
+        nextScreen: MyApp(),
+      ),
+    );
+  }
+}
+
+
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
