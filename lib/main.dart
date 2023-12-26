@@ -1,9 +1,11 @@
 import 'package:another_flutter_splash_screen/another_flutter_splash_screen.dart';
 import 'package:corvit_weekend_eve/login.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
-  runApp(const MaterialApp(
+  runApp(const GetMaterialApp(
     home: SplashScreen(),
   ));
 }
@@ -32,8 +34,21 @@ class SplashScreen extends StatelessWidget {
 
 
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyApp extends StatefulWidget {
+   MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+    int x = 0;
+
+    double y = 6.7;
+
+    String z = 'Hello';
+
+    bool c = true;
 
   @override
   Widget build(BuildContext context) {
@@ -214,7 +229,7 @@ class MyApp extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Padding(
@@ -225,13 +240,35 @@ class MyApp extends StatelessWidget {
                   ElevatedButton(
                     onPressed: (){
 
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context)=>LoginScreen() ) );
+                      // Get.snackbar('Hello', 'Test Test Test');
+
+                      // Get.changeTheme(ThemeData.dark());
+                      
+                      Get.to(LoginScreen(),transition:Transition.leftToRightWithFade );
+                      // Navigator.push(context,
+                      //     MaterialPageRoute(builder: (context)=>LoginScreen() ) );
 
                     },
                     child: Text(
                         'Next Screen'
                     ),
+                  ),
+
+
+                  Text(
+                    '$x',
+                    style: GoogleFonts.podkova(
+                      fontSize: 25,
+                    ),
+                  ),
+                  ElevatedButton(
+                      onPressed: (){
+                        x++;
+                        setState(() {
+
+                        });
+                      },
+                      child: Text('Add Number'),
                   ),
 
                 ],
