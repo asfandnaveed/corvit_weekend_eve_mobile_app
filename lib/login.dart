@@ -1,10 +1,14 @@
+import 'package:corvit_weekend_eve/controller/controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 
 
 class LoginScreen extends StatelessWidget {
    LoginScreen({super.key});
+
+   final Controller controller = Get.find();
 
 
   double width =0;
@@ -32,7 +36,7 @@ class LoginScreen extends StatelessWidget {
                 bottom: 20,
                 left: 20,
                 child: Text(
-                    'Home Interior',
+                    'Home Interior ${controller.x.value}',
                   style: GoogleFonts.abel(
                     fontSize: 35,
                     color: Colors.white

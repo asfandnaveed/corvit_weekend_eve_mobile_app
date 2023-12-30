@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "234433931029",
+    "project_id": "corvitweekendeve",
+    "storage_bucket": "corvitweekendeve.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:234433931029:android:2244f59e83ed1d9b696b1c",
+        "android_client_info": {
+          "package_name": "com.proglabs.corvit.corvit_weekend_eve"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVqvSvIMUR2lMYpPd1l5KL-_Hb2S8fciI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

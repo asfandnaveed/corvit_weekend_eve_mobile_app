@@ -1,4 +1,5 @@
 import 'package:another_flutter_splash_screen/another_flutter_splash_screen.dart';
+import 'package:corvit_weekend_eve/controller/controller.dart';
 import 'package:corvit_weekend_eve/login.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -42,6 +43,9 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+
+    final Controller controller = Get.put(Controller());
+
     int x = 0;
 
     double y = 6.7;
@@ -255,18 +259,18 @@ class _MyAppState extends State<MyApp> {
                   ),
 
 
-                  Text(
-                    '$x',
+                  Obx(() => Text(
+                    '${controller.x.value}',
                     style: GoogleFonts.podkova(
                       fontSize: 25,
                     ),
                   ),
+                  ),
+
+
                   ElevatedButton(
                       onPressed: (){
-                        x++;
-                        setState(() {
-
-                        });
+                        controller.x.value++;
                       },
                       child: Text('Add Number'),
                   ),
