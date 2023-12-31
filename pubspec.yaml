@@ -41,6 +41,8 @@ dependencies:
   another_flutter_splash_screen: ^1.2.0
   lottie: ^2.7.0
   get: ^4.6.6
+  firebase_core: ^2.24.2
+  firebase_auth: ^4.15.3
 
 dev_dependencies:
   flutter_test:

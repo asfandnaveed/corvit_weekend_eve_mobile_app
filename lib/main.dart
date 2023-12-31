@@ -1,11 +1,18 @@
 import 'package:another_flutter_splash_screen/another_flutter_splash_screen.dart';
+import 'package:corvit_weekend_eve/LoginScreen/loginscreen.dart';
 import 'package:corvit_weekend_eve/controller/controller.dart';
+import 'package:corvit_weekend_eve/firebase_options.dart';
 import 'package:corvit_weekend_eve/login.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const GetMaterialApp(
     home: SplashScreen(),
   ));
@@ -248,7 +255,7 @@ class _MyAppState extends State<MyApp> {
 
                       // Get.changeTheme(ThemeData.dark());
                       
-                      Get.to(LoginScreen(),transition:Transition.leftToRightWithFade );
+                      Get.to(Login(),transition:Transition.leftToRightWithFade );
                       // Navigator.push(context,
                       //     MaterialPageRoute(builder: (context)=>LoginScreen() ) );
 
