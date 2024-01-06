@@ -4,6 +4,7 @@ import 'package:corvit_weekend_eve/controller/controller.dart';
 import 'package:corvit_weekend_eve/firebase_options.dart';
 import 'package:corvit_weekend_eve/login.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -11,6 +12,7 @@ import 'package:google_fonts/google_fonts.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Firebase.initializeApp(
+    name: 'corvitweekendeve',
     options: DefaultFirebaseOptions.currentPlatform,
   );
   runApp(const GetMaterialApp(
@@ -280,6 +282,19 @@ class _MyAppState extends State<MyApp> {
                         controller.x.value++;
                       },
                       child: Text('Add Number'),
+                  ),
+
+                  ElevatedButton(
+                    onPressed: (){
+                      final db = FirebaseDatabase.instance.ref();
+
+                      db.child('Students').child('Ahmed').set({
+                        "id":"1",
+                        "age":"22",
+                        "rollNumber":"SH_LH_988",
+                      });
+                    },
+                    child: Text('Add Data Into Firebase'),
                   ),
 
                 ],
