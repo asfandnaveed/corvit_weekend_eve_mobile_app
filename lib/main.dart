@@ -9,11 +9,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  Firebase.initializeApp(
-    name: 'corvitweekendeve',
-    options: DefaultFirebaseOptions.currentPlatform,
+  await Firebase.initializeApp(
+
   );
   runApp(const GetMaterialApp(
     home: SplashScreen(),
@@ -288,10 +287,10 @@ class _MyAppState extends State<MyApp> {
                     onPressed: (){
                       final db = FirebaseDatabase.instance.ref();
 
-                      db.child('Students').child('Ahmed').set({
-                        "id":"1",
-                        "age":"22",
-                        "rollNumber":"SH_LH_988",
+                      db.child('Students').child('Ali').child('Marks').set({
+                        "subject1":"50",
+                        "subject2":"73",
+                        "subject3":"29",
                       });
                     },
                     child: Text('Add Data Into Firebase'),

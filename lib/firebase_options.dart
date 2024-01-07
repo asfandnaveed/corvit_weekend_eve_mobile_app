@@ -17,11 +17,17 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+        'you can reconfigure this by running the FlutterFire CLI again.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
-        return android;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for android - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
@@ -45,25 +51,6 @@ class DefaultFirebaseOptions {
         );
     }
   }
-
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDNfuLUthCKPLd9UCDWjxLnQaNj4fpKLXU',
-    appId: '1:234433931029:web:92abe2d45731f9ba696b1c',
-    messagingSenderId: '234433931029',
-    projectId: 'corvitweekendeve',
-    authDomain: 'corvitweekendeve.firebaseapp.com',
-    databaseURL: 'https://corvitweekendeve-default-rtdb.asia-southeast1.firebasedatabase.app',
-    storageBucket: 'corvitweekendeve.appspot.com',
-  );
-
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBVqvSvIMUR2lMYpPd1l5KL-_Hb2S8fciI',
-    appId: '1:234433931029:android:2244f59e83ed1d9b696b1c',
-    messagingSenderId: '234433931029',
-    projectId: 'corvitweekendeve',
-    databaseURL: 'https://corvitweekendeve-default-rtdb.asia-southeast1.firebasedatabase.app',
-    storageBucket: 'corvitweekendeve.appspot.com',
-  );
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyDe8O1bZ_Mdt-ISW01oTtW5EdUtlOT0h08',

@@ -26,5 +26,7 @@
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:234433931029:ios:adcae500b0b18e68696b1c</string>
+	<key>DATABASE_URL</key>
+	<string>https://corvitweekendeve-default-rtdb.asia-southeast1.firebasedatabase.app</string>
 </dict>
 </plist>
