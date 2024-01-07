@@ -287,11 +287,21 @@ class _MyAppState extends State<MyApp> {
                     onPressed: (){
                       final db = FirebaseDatabase.instance.ref();
 
-                      db.child('Students').child('Ali').child('Marks').set({
-                        "subject1":"50",
-                        "subject2":"73",
-                        "subject3":"29",
+                      // db.child('Students').child('Ahmed').child('Marks').push().set({
+                      //   "subject":"38",
+                      //
+                      //
+                      // });
+
+                      db.child('Students').get().then((snapshot) => {
+
+                        for(var items in snapshot.children){
+                          debugPrint("SNAPSHOT DATA : ${items.value}"),
+                        }
+
                       });
+
+
                     },
                     child: Text('Add Data Into Firebase'),
                   ),
