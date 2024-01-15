@@ -32,53 +32,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   message: 'I am fine',
                   isSender: true,
                 ),
-                ChatBubble(
-                  message: 'I am fine',
-                  isSender: true,
-                ),
-                ChatBubble(
-                  message: 'I am fine',
-                  isSender: true,
-                ),
-                ChatBubble(
-                  message: 'I am fine',
-                  isSender: true,
-                ),
-                ChatBubble(
-                  message: 'I am fine',
-                  isSender: true,
-                ),ChatBubble(
-                  message: 'I am fine',
-                  isSender: true,
-                ),
-                ChatBubble(
-                  message: 'Hello How are you doing today?',
-                  isSender: false,
-                ),
-                ChatBubble(
-                  message: 'Hello How are you doing today?',
-                  isSender: false,
-                ),
-                ChatBubble(
-                  message: 'Hello How are you doing today?',
-                  isSender: false,
-                ),
-                ChatBubble(
-                  message: 'Hello How are you doing today?',
-                  isSender: false,
-                ),
-                ChatBubble(
-                  message: 'Hello How are you doing today?',
-                  isSender: false,
-                ),
-                ChatBubble(
-                  message: 'Hello How are you doing today?',
-                  isSender: false,
-                ),
-                ChatBubble(
-                  message: 'Hello How are you doing today?',
-                  isSender: false,
-                ),
+            
 
 
 
