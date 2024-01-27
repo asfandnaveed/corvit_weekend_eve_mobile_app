@@ -1,3 +1,4 @@
+import 'package:corvit_weekend_eve/api/ApiInterface.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -32,7 +33,14 @@ class _ChatScreenState extends State<ChatScreen> {
                   message: 'I am fine',
                   isSender: true,
                 ),
-            
+
+
+               ElevatedButton(
+                   onPressed: (){
+                     ApiInterface().getProductData();
+                   },
+                   child: Text('Get Products Data')
+               ) ,
 
 
 
