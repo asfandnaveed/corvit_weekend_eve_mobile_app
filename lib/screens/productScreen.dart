@@ -1,4 +1,5 @@
 import 'package:corvit_weekend_eve/api/ApiInterface.dart';
+import 'package:corvit_weekend_eve/controller/controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
@@ -12,6 +13,8 @@ class ProductScreen extends StatefulWidget {
 }
 
 class _ProductScreenState extends State<ProductScreen> {
+
+  Controller controller = Get.find();
 
   @override
   void initState() {
@@ -40,7 +43,7 @@ class _ProductScreenState extends State<ProductScreen> {
                 SizedBox(
                   height: Get.height*0.8,
                   child: ListView.builder(
-                    itemCount: 5,
+                    itemCount: controller.productModel.value.products!.length,
                     itemBuilder: (context,index){
                       return Column(
                         children: [
@@ -53,7 +56,7 @@ class _ProductScreenState extends State<ProductScreen> {
                               ClipRRect(
                                 borderRadius: BorderRadius.circular(15),
                                 child: Image.network(
-                                  'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?q=80&w=2880&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+                                  'https://projects.asfandnaveed.com/corvit/${controller.productModel.value.products![index].pImage}',
                                   width: 140,
                                   height: 140,
                                   fit: BoxFit.cover,
@@ -115,7 +118,7 @@ class _ProductScreenState extends State<ProductScreen> {
                                       Padding(
                                         padding: const EdgeInsets.symmetric(horizontal: 8.0),
                                         child: Text(
-                                          'Product Name',
+                                          '${controller.productModel.value.products![index].pName}',
                                           style: GoogleFonts.poppins(
                                               fontWeight: FontWeight.w600,
                                               fontSize: 17
@@ -126,7 +129,7 @@ class _ProductScreenState extends State<ProductScreen> {
                                       Padding(
                                         padding: const EdgeInsets.symmetric(horizontal: 8.0),
                                         child: Text(
-                                          '40 Rs',
+                                          '${controller.productModel.value.products![index].pPrice} Rs',
                                           style: GoogleFonts.poppins(
                                               fontWeight: FontWeight.w500,
                                               fontSize: 16
