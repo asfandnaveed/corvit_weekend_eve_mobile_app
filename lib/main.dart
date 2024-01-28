@@ -17,14 +17,16 @@ Future<void> main() async {
   await Firebase.initializeApp(
 
   );
-  runApp(const GetMaterialApp(
+  runApp( GetMaterialApp(
     home: SplashScreen(),
   ));
 }
 
 
 class SplashScreen extends StatelessWidget {
-  const SplashScreen({super.key});
+   SplashScreen({super.key});
+  
+  Controller controller = Get.put(Controller());
 
   @override
   Widget build(BuildContext context) {

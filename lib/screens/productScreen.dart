@@ -1,3 +1,4 @@
+import 'package:corvit_weekend_eve/api/ApiInterface.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
@@ -11,6 +12,14 @@ class ProductScreen extends StatefulWidget {
 }
 
 class _ProductScreenState extends State<ProductScreen> {
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    ApiInterface().getProductData();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
