@@ -29,7 +29,7 @@ class _ProductScreenState extends State<ProductScreen> {
                   ),
                 ),
                 SizedBox(
-                  height: 600,
+                  height: Get.height*0.8,
                   child: ListView.builder(
                     itemCount: 5,
                     itemBuilder: (context,index){
