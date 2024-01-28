@@ -10,6 +10,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'screens/productScreen.dart';
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -35,7 +37,7 @@ class SplashScreen extends StatelessWidget {
             height: 200,
             child: Image.asset('assets/images/perfume.png'),
           ),
-        nextScreen: ChatScreen(),
+        nextScreen: ProductScreen(),
       ),
     );
   }
