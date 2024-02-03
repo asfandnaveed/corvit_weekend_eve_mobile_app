@@ -24,4 +24,21 @@ class ApiInterface {
   }
 
 
+  Future RegisterUser() async{
+
+    String registerURL = "https://asfandnaveed.com/projects/corvit/api/register.php";
+
+    var formdata = FormData({
+      "username":"Mobile",
+      "email":"mobile@corvit.com",
+      "password": "123456"
+    });
+
+    var response = await connect.post(registerURL, formdata);
+
+    debugPrint('${response.body}');
+
+  }
+
+
 }

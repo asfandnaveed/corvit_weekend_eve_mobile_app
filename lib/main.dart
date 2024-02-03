@@ -1,6 +1,7 @@
 import 'package:another_flutter_splash_screen/another_flutter_splash_screen.dart';
 import 'package:corvit_weekend_eve/ChatScreen/chatScreen.dart';
 import 'package:corvit_weekend_eve/LoginScreen/loginscreen.dart';
+import 'package:corvit_weekend_eve/LoginScreen/registerScreen.dart';
 import 'package:corvit_weekend_eve/controller/controller.dart';
 import 'package:corvit_weekend_eve/firebase_options.dart';
 import 'package:corvit_weekend_eve/login.dart';
@@ -39,7 +40,7 @@ class SplashScreen extends StatelessWidget {
             height: 200,
             child: Image.asset('assets/images/perfume.png'),
           ),
-        nextScreen: ProductScreen(),
+        nextScreen: RegisterScreen(),
       ),
     );
   }

@@ -42,7 +42,7 @@ class _ProductScreenState extends State<ProductScreen> {
                 ),
                 SizedBox(
                   height: Get.height*0.8,
-                  child: ListView.builder(
+                  child: Obx(() => ListView.builder(
                     itemCount: controller.productModel.value.products!.length,
                     itemBuilder: (context,index){
                       return Column(
@@ -169,7 +169,7 @@ class _ProductScreenState extends State<ProductScreen> {
                         ],
                       );
                     },
-                  ),
+                  ),)
                 ),
 
               ],
