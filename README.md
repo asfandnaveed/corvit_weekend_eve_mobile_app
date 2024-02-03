@@ -15,4 +15,9 @@ Firebase Design : https://dribbble.com/shots/5001642-Where-s-your-next-adventure
 
 # API LINK
 
+Geti Products
 https://projects.asfandnaveed.com/corvit/api/getallproducts.php
+
+Register : 
+https://asfandnaveed.com/projects/corvit/api/register.php
+
