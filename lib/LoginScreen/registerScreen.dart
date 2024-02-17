@@ -10,16 +10,76 @@ class RegisterScreen extends StatefulWidget {
 
 class _RegisterScreenState extends State<RegisterScreen> {
 
+  TextEditingController username = TextEditingController();
+  TextEditingController email = TextEditingController();
+  TextEditingController password = TextEditingController();
+
   @override
   void initState() {
     // TODO: implement initState
 
-    ApiInterface().RegisterUser();
+
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: Column(
+            children: [
+              Text(
+                'Register Screen',
+              ),
+              SizedBox(
+                height: 40,
+              ),
+              TextFormField(
+                controller: username,
+                decoration: InputDecoration(
+                  hintText: 'Username'
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              TextFormField(
+                controller: email,
+                decoration: InputDecoration(
+                    hintText: 'Email'
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              TextFormField(
+                controller: password,
+                obscureText: true,
+                decoration: InputDecoration(
+                    hintText: 'Password'
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              ElevatedButton(
+                  onPressed: (){
+                    ApiInterface().RegisterUser(
+                      username.text,
+                      email.text,
+                      password.text
+                    );
+                  },
+                  child: Text(
+                    'Register',
+                  ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
